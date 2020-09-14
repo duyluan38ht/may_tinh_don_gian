@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td  colspan="4" id="ketqua"></td>
+    </tr>
+    <tr>
+        <td onclick="xoa()">AC</td>
+        <td>Del</td>
+        <td>.</td>
+        <td onclick="number('/')">/</td>
+    </tr>
+    <tr>
+        <td onclick="number(7)">7</td>
+        <td onclick="number(8)">8</td>
+        <td onclick="number(9)">9</td>
+        <td onclick="number('*')">x</td>
+    </tr>
+    <tr>
+        <td onclick="number(4)">4</td>
+        <td onclick="number(5)">5</td>
+        <td onclick="number(6)">6</td>
+        <td onclick="number('-')">-</td>
+    </tr>
+    <tr>
+        <td onclick="number(1)">1</td>
+        <td onclick="number(2)">2</td>
+        <td onclick="number(3)">3</td>
+        <td onclick="number('+')">+</td>
+    </tr>
+    <tr>
+        <td colspan="2" onclick="number(0)">0</td>
+        <td>,</td>
+        <td onclick="kq()">=</td>
+    </tr>
+</table>
+<style>
+    tr,td{
+        width: 75px;
+        height: 80px;
+        border: 1px solid black;
+        text-align: center;
+    }
+    #ketqua{
+    text-align: right;
+    }
+</style>
+<script>
+function number(value) {
+    let number = document.getElementById("ketqua")
+    number.innerHTML += value;
+}
+function kq(){
+    let str = document.getElementById("ketqua").innerHTML;
+    let result=eval(str);
+    document.getElementById("ketqua").innerHTML=result;
+
+}
+function xoa(){
+    document.getElementById("ketqua").innerHTML=""
+}
+</script>
+</body>
+</html>
